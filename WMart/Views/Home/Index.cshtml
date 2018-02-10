@@ -11,23 +11,50 @@
     <title>Index</title>
     <style>
         .abc{
-            width:500px;
+            
             height:200px;
-            float:left;
+            
+            padding-top: 10em;
+            align-content:center;
+            text-decoration:none;
 
         }
+         .btn a{
+            color: white;
+            
+        }
+        body{
+            background-color: #F1F1F1; 
+        }
     </style>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div> 
-        <p>The First WeBpage Functionality </p>
-        <p> Making the Data Entry Form</p>
-        v>
-        @ViewBag.Greeting World (from the view)
-        <p>
-            We're going to have an exciting party.<br />
-            (To do: sell it better. Add pictures or something.)
-            @Html.ActionLink("Go to CustomerPage", "RsvpForm")
-</div>
+       <div class="page-header">
+          <h2>WMart</h2> 
+       </div>
+        <div class="text-center">
+            <div class="row">
+            </div>
+            <div class="col-md-6">
+                <h2> We're going to have an exciting party.<br /></h2>
+
+            </div>
+            <div class="col-md-6">
+                <h3>(To do: sell it better. Add pictures or something.)</h3>
+            </div>
+                
+
+            <div class="abc text-center center">
+                <h3><br />@ViewBag.Greeting World (from the view)</h3>
+                <div class="btn btn-success ">
+
+                    <center>@Html.ActionLink("Go to CustomerPage", "RsvpForm")</center>
+
+                </div>
+            </div>
+            </div>
+    
 </body>
 </html>

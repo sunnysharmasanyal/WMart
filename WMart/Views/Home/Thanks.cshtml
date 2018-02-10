@@ -1,0 +1,49 @@
+﻿@model WMart.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+     
+        <div class="container">
+            <div class="page-header">
+                <h1>  <img src="~/scripts/Images/logo.png" width="70" height="60" ; /><span style="margin-top:3em"> WMart</span></h1>
+            </div>
+        </div>
+            <div class="container">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr><h1>Thanks you @Model.Name!</h1></tr>
+                            <tr>
+                                <div>
+                                    @if (Model.willAttend == true)
+                                    {
+                                        @:<p>It's great that you're coming. The drinks are already in the fridge!</p>
+ }
+                                    else if (Model.willAttend == null)
+                                    {
+                                        @:Sorry you didnot confirm your presence
+                      }
+                                    else
+                                    {
+                                        @:Sorry to hear that you can't make it, but thanks for letting us know.
+ }
+                                </div>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+       
+</body>
+</html>

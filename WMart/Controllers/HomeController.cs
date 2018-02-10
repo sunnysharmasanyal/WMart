@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using WMart.Models;
 namespace WMart.Controllers
 {
     public class HomeController : Controller
@@ -16,9 +16,22 @@ namespace WMart.Controllers
             return View();
         }
         //Creating new ActionResult for URL 
+        [HttpGet]
         public ActionResult RsvpForm()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult RsvpForm(GuestResponse Employee)
+        {
+            if(ModelState.IsValid)
+            { 
+            return View("Thanks",Employee);
+            }
+            else
+            {
+                return View();
+            }
         }
 
     }
