@@ -24,7 +24,14 @@ namespace WMart.Controllers
         [HttpPost]
         public ActionResult RsvpForm(GuestResponse Employee)
         {
+            if(ModelState.IsValid)
+            { 
             return View("Thanks",Employee);
+            }
+            else
+            {
+                return View();
+            }
         }
 
     }
