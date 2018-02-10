@@ -1,0 +1,96 @@
+﻿@model WMart.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .header{
+            padding : 0px 20px 40px 20px;
+            margin:auto;
+            float:left;
+            width:100%;
+            height:200px;
+            background-color:#F5F5F5;
+        }
+        .width40px{
+            padding-left:25em;
+            margin :auto;
+            z-index:30;
+        }
+        .background{
+            background-color:antiquewhite;
+            width:100%; /*please dont alter the values*/
+            height:100%;/*please dont alter the values*/
+        }
+        .headings{
+            text-wrap:normal;
+            font-weight:bold;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:25px;
+            color:black;
+            text-align:justify;
+            padding-left:3em;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="container">
+            <div class="page-header">
+                <h1>  <img src="~/scripts/Images/logo.png" width="70" height="60" ; /><span style="margin-top:3em"> WMart</span></h1>
+            </div>
+        </div>
+        <div class="section" style="background-color:#F5F5F5;">
+            <div class="container">
+                <div class="width40px">
+                    <h2>Employee Data</h2>
+                    <p>Basic Details of all Employees working in WMart IT Deparment</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>EmailID</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Customer Name</td>
+                                <td>@Html.TextBoxFor(x => x.Name)</td>
+                            </tr>
+                            <tr>
+                                <td>Customer EmailID</td>
+                                <td>@Html.TextBoxFor(x => x.Email)</td>
+                            </tr>
+                            <tr>
+                                <td>Customer Phone</td>
+                                <td>@Html.TextBoxFor(x => x.Phone)</td>
+                            </tr>
+                            <tr>
+                                <td>Will Attend?</td>
+                                <td>@Html.DropDownListFor(x => x.willAttend, new[] { new SelectListItem { Text = "Yes I Will Attend", Value = bool.TrueString }, new SelectListItem { Text = "No I Will Attend", Value = bool.FalseString } }, "Choose an option")</td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" id="SubmitRSVP" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    
+</body>
+</html>

@@ -11,7 +11,15 @@ namespace WMart.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Good Morning Sir" : "Good Afternoon Sir";
             return View();
         }
+        //Creating new ActionResult for URL 
+        public ActionResult RsvpForm()
+        {
+            return View();
+        }
+
     }
 }
