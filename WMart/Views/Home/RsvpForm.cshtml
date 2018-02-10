@@ -23,7 +23,7 @@
             background-color:#F5F5F5;
         }
         .width40px{
-            padding-left:25em;
+            padding-left:20em;
             margin :auto;
             z-index:30;
         }
@@ -51,6 +51,7 @@
     </style>
 </head>
 <body>
+    
     @using (Html.BeginForm())
     {
         <div class="container">
@@ -60,42 +61,50 @@
         </div>
         <div class="section" style="background-color:#F5F5F5;">
             <div class="container">
-                <div class="width40px">
-                    <h2>Employee Data</h2>
-                    <p>Basic Details of all Employees working in WMart IT Deparment</p>
-                    <table class="table">
-                        <thead >
-                            <tr>
-                                <th>Name</th>
-                                <th>EmailID</th>
+                <div class="panel panel-success">
+                    <div class="panel-heading text-center"><h4>RSVP</h4></div>
+                    <div class="width40px">
+                        <div class="panel-body">
+                            @using (Html.BeginForm())
+                            {
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>EmailID</th>
 
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @Html.ValidationSummary()
-                          
-                            <tr>
-                                <td>Customer Name</td>
-                                <td>@Html.TextBoxFor(x => x.Name)</td>
-                            </tr>
-                            <tr>
-                                <td>Customer EmailID</td>
-                                <td>@Html.TextBoxFor(x => x.Email)</td>
-                            </tr>
-                            <tr>
-                                <td>Customer Phone</td>
-                                <td>@Html.TextBoxFor(x => x.Phone)</td>
-                            </tr>
-                            <tr>
-                                <td>Will Attend?</td>
-                                <td>@Html.DropDownListFor(x => x.willAttend, new[] { new SelectListItem { Text = "Yes I Will Attend", Value = bool.TrueString }, new SelectListItem { Text = "No I Will Attend", Value = bool.FalseString } }, "Choose an option")</td>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" id="SubmitRSVP" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.ValidationSummary()
+
+                                        <tr>
+                                            <td>Customer Name</td>
+                                            <td>@Html.TextBoxFor(x => x.Name)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer EmailID</td>
+                                            <td>@Html.TextBoxFor(x => x.Email)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer Phone</td>
+                                            <td>@Html.TextBoxFor(x => x.Phone)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Will Attend?</td>
+                                            <td>@Html.DropDownListFor(x => x.willAttend, new[] { new SelectListItem { Text = "Yes I Will Attend", Value = bool.TrueString }, new SelectListItem { Text = "No I Will Attend", Value = bool.FalseString } }, "Choose an option")</td>
+                                        </tr>
+                                        <tr>
+                                            <td> <input type="submit" id="SubmitRSVP" class="btn-block btn btn-success"  /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            }
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
