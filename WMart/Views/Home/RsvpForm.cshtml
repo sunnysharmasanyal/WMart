@@ -1,0 +1,74 @@
+﻿@model WMart.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/Style/rsvp.css" rel="stylesheet" />
+</head>
+<body>
+   @using (Html.BeginForm("RsvpForm", "Home", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="page-header">
+                <h1>  <img src="~/scripts/Images/logo.png" width="70" height="60" ; /><span style="margin-top:3em"> WMart</span></h1>
+            </div>
+        </div>
+        <div class="section" style="background-color:#F5F5F5;">
+            <div class="container">
+                <div class="width40px">
+                    <h2>Employee Data</h2>
+                    <p>Basic Details of all Employees working in WMart IT Deparment</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>EmailID</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Customer Name</td>
+                                <td>@Html.TextBoxFor(m => m.Name)</td>
+                            </tr>
+                            <tr>
+                                <td>Customer EmailID</td>
+                                <td>@Html.TextBoxFor(x => x.CEmail)</td>
+                            </tr>
+                            <tr>
+                                <td>Customer Phone</td>
+                                <td>@Html.TextBoxFor(x => x.CPhone)</td>
+                            </tr>
+                            <tr>
+                                <td>Will Attend?</td>
+                                <td>@Html.DropDownListFor(m => m.Status, new List<SelectListItem>
+                               { new SelectListItem{Text="Yes I will Attend", Value="Yes"},
+                                 new SelectListItem{Text="No I will not be there", Value="No"}},
+                                
+
+                     "Please select")</td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" id="SubmitRSVP" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    
+</body>
+</html>
