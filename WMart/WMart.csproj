@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\GuestResponse.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
