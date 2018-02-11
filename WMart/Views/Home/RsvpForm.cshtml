@@ -42,10 +42,10 @@
            <div class="col-md-4 col-md-offset-1">
                <h2>Employee Data</h2>
                <p>Basic Details of all Employees working in WMart IT Deparment</p>
-               <table class="table  table-bordered table-striped table-hover ">                  
+               <table class="table  table-bordered table-striped table-hover  ">                  
                    <tbody>
                        <tr>
-                           <td class="active">Customer Name</td>
+                           <td>Customer Name</td>
                            <td>@Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter Your Name" })</td>
                        </tr>
                        <tr>
@@ -61,7 +61,7 @@
                            <td>
                                @Html.DropDownListFor(m => m.Status, new List<SelectListItem>
                                { new SelectListItem{Text="Yes I will Attend", Value="Yes"},
-                                 new SelectListItem{Text="No I will not be there", Value="No"}})
+                                 new SelectListItem{Text="No I will not be there", Value="No"}}, new { @class ="form-control"})
                            </td>
 
                        </tr>

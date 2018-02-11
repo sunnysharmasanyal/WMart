@@ -11,11 +11,13 @@ namespace WMart.Controllers
 {
     public class HomeController : Controller
     {
+        int a = 6;
         // GET: Home
         public ActionResult Index()
         {
             int hour = DateTime.Now.Hour;
             ViewBag.Greeting = hour < 12 ? "Good Morning Sir" : "Good Afternoon Sir";
+            
             return View();
         }
         //Creating new ActionResult for URL 
