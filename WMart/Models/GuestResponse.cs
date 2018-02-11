@@ -10,7 +10,7 @@ namespace WMart.Models
     {
         
         public int CId { get; set; }
-
+        [Display(Name = "Enter Your Name")]
         [Required(ErrorMessage = "First name is required.")]
         public string Name { get; set; }
 

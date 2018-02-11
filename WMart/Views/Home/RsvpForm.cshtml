@@ -15,59 +15,66 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link href="~/Style/rsvp.css" rel="stylesheet" />
+
+
+    <style>
+        .onclickcol {
+     
+
+        }
+            .onclickcol:hover {
+                background-color: red;
+            }
+    </style>
+
+
 </head>
 <body>
    @using (Html.BeginForm("RsvpForm", "Home", FormMethod.Post))
     {
         <div class="container">
-            <div class="header page-header">
+            <div class="page-header">
                 <h1>  <img src="~/scripts/Images/logo.png" width="70" height="60" ; /><span style="margin-top:3em"> WMart</span></h1>
             </div>
         </div>
-        <div class="section" style="background-color:#F5F5F5;">
-            <div class="container">
-                <div class="width40px">
-                    <h2>Employee Data</h2>
-                    <p>Basic Details of all Employees working in WMart IT Deparment</p>
-                    <table class="table  table-bordered table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>EmailID</th>
-
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="active">Customer Name</td>
-                                <td>@Html.TextBoxFor(m => m.Name)</td>
-                            </tr>
-                            <tr>
-                                <td>Customer Email ID</td>
-                                <td>@Html.TextBoxFor(x => x.CEmail)</td>
-                            </tr>
-                            <tr>
-                                <td>Customer Phone</td>
-                                <td>@Html.TextBoxFor(x => x.CPhone)</td>
-                            </tr>
-                            <tr>
-                                <td>Will Attend?</td>
-                                <td>@Html.DropDownListFor(m => m.Status, new List<SelectListItem>
+                   
+       <div class="row">
+           <div class="col-md-4 col-md-offset-1">
+               <h2>Employee Data</h2>
+               <p>Basic Details of all Employees working in WMart IT Deparment</p>
+               <table class="table  table-bordered table-striped table-hover ">                  
+                   <tbody>
+                       <tr>
+                           <td class="active">Customer Name</td>
+                           <td>@Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter Your Name" })</td>
+                       </tr>
+                       <tr>
+                           <td>Customer Email ID</td>
+                           <td>@Html.TextBoxFor(x => x.CEmail, new { @class = "form-control", placeholder = "Enter Your Email" })</td>
+                       </tr>
+                       <tr>
+                           <td>Customer Phone</td>
+                           <td>@Html.TextBoxFor(x => x.CPhone, new { @class = "form-control", placeholder = "Enter Your Mobile number" })</td>
+                       </tr>
+                       <tr>
+                           <td>Will Attend?</td>
+                           <td>
+                               @Html.DropDownListFor(m => m.Status, new List<SelectListItem>
                                { new SelectListItem{Text="Yes I will Attend", Value="Yes"},
-                                 new SelectListItem{Text="No I will not be there", Value="No"}},
-                                
+                                 new SelectListItem{Text="No I will not be there", Value="No"}})
+                           </td>
 
-                     "Please select")</td>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" class="btn btn-block btn-success" id="SubmitRSVP" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+                       </tr>
+                       <tr>
+                           <td><input type="submit" class="btn btn-block btn-success onclickcol" id="SubmitRSVP" /></td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           <div class="col-md-3">
+               
+           </div>
+           </div>
     }
     
 </body>
