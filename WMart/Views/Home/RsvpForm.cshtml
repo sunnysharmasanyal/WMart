@@ -80,7 +80,8 @@
                                         @Html.ValidationSummary()
 
                                         <tr>
-                                            <td>Customer Name</td>
+                                            <!--Color change for label-->
+                                            <td style="color:lawngreen">@Html.Label("CustomerName","Customer Name")</td>
                                             <td>@Html.TextBoxFor(x => x.Name)</td>
                                         </tr>
                                         <tr>
