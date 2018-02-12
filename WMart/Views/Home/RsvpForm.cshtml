@@ -1,5 +1,6 @@
 ﻿@model WMart.Models.GuestResponse
 
+
 @{
     Layout = null;
 }
@@ -65,8 +66,6 @@
                     <div class="panel-heading text-center"><h4>Employee Details</h4></div>
                     <div class="width40px">
                         <div class="panel-body">
-                            @using (Html.BeginForm())
-                            {
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -80,7 +79,8 @@
                                         @Html.ValidationSummary()
 
                                         <tr>
-                                            <td>Customer Name</td>
+                                            <!--Color change for label-->
+                                            <td style="color:lawngreen">@Html.Label("CustomerName","Customer Name")</td>
                                             <td>@Html.TextBoxFor(x => x.Name)</td>
                                         </tr>
                                         <tr>
@@ -98,10 +98,15 @@
                                         <tr>
                                             <td> <input type="submit" id="SubmitRSVP" class="btn-block btn btn-success"  /></td>
                                         </tr>
+                                        <tr>
+                                            <td ><a href='@Url.Action("InsertCustomer", "Default1Controller")'>
+                                                <input type='button' value='Dummy Button' />
+                                            </a></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 
-                            }
+                            
                         </div>
                     </div>
 
