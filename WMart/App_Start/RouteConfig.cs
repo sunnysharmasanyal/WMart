@@ -19,9 +19,9 @@ namespace WMart
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-                name: "RsvpForm",
-                url: "Home/RsvpForm",
-                defaults: new { controller = "HomeController", action = "RsvpForm", id = UrlParameter.Optional }
+                name: "InsertCustomer",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Default1Controller", action = "InsertCustomer", id = UrlParameter.Optional }
             );
         }
     }
